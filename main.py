@@ -37,6 +37,11 @@ for current_page in range(1, 35):
             row = []
             i = 0
         filtered_data = data.getText().split(":")[1]
+        if '$' in filtered_data:
+            filtered_data = filtered_data.split('$')[1].replace(',', '')
+
+        if "%" in filtered_data:
+            filtered_data = filtered_data.split('%')[0]
         row.append(filtered_data)
         i += 1
 
